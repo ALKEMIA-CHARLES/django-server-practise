@@ -25,12 +25,13 @@ SECRET_KEY = 'g0_!w^djwd)cq+n9=1dx+ofvf^0c8-%k-_ydy%&@r47a3&g^gx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['197.254.8.138']
+ALLOWED_HOSTS = ['197.254.8.138', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,11 +51,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'instaclone.urls'
-
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +67,11 @@ TEMPLATES = [
         },
     },
 ]
+
+UPLOADCARE = {
+    'pub_key': 'YOUR_PUBLIC_KEY',
+    'secret': 'YOUT_PRIVATE_KEY',
+}
 
 WSGI_APPLICATION = 'instaclone.wsgi.application'
 
