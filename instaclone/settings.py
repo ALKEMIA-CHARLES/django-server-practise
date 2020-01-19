@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['197.254.8.138', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'messenger',
+    'user',
     'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
